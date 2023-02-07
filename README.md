@@ -1,4 +1,4 @@
-# nuxt3-template
+# nuxt-template
 Nuxt3-template,Nuxt,Nuxtjs,Nuxtjs3
 
 ```bash
