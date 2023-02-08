@@ -1,9 +1,11 @@
 <template>
   <div id="fff">
-    <div v-if="pending">Loading ...</div>
-    <div v-else>
-      <div v-for="key in posts">
-        <!-- do something -->
+    <div>
+      <div v-if="pending">Loading ...</div>
+      <div v-else>
+        <div v-for="key in posts">
+          <!-- do something -->
+        </div>
       </div>
     </div>
     <h2 v-for="(key, value, index) in as" :key="index">
@@ -73,12 +75,17 @@
       </template>
     </modal>
   </Teleport>
-  <div>
+  <div class="w-80 m-20">
     <nuxt-img src="/beauty.webp" loading="lazy" quality="80" />
   </div>
   <h2>{{ $device }}</h2>
+  <div id="tailwind-template">
+    <!-- <h2>{{ tailwindConfig }}</h2> -->
+    <TButton>Button</TButton>
+  </div>
 </template>
 <script setup>
+import tailwindConfig from "#tailwind-config";
 const showModal = ref(false);
 const groceryList = ref([
   { id: 0, text: "Vegetables" },
@@ -129,7 +136,7 @@ const data = await $fetch('https://api.github.com/orgs/nuxt')
 </script>
 <style>
 div {
-  font-size: 40px;
+  font-size: 24px;
 }
 .red {
   background-color: red;

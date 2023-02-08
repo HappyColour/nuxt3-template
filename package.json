@@ -10,11 +10,11 @@
   "devDependencies": {
     "@nuxt/image-edge": "1.0.0-27919678.2f5b64b",
     "@nuxtjs/device": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^6.3.1",
     "consola": "^2.15.3",
     "nuxt": "^3.1.2"
   },
   "dependencies": {
-    "@nuxt/ui": "^0.4.1",
     "http-proxy-middleware": "^2.0.6"
   }
 }
