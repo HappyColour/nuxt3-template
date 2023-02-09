@@ -1,6 +1,15 @@
 <template>
   <div id="fff">
     <div>
+      <h2 class="w-20 md:w-32">abcd</h2>
+      <div class="space-y-4">
+        <div class="flow-root ...">
+          <div class="my-4 ...">1</div>
+        </div>
+        <div class="flow-root ...">
+          <div class="my-4 ...">2</div>
+        </div>
+      </div>
       <div v-if="pending">Loading ...</div>
       <div v-else>
         <div v-for="key in posts">
@@ -135,9 +144,6 @@ const data = await $fetch('https://api.github.com/orgs/nuxt')
 // console.log('!!!data', data);
 </script>
 <style>
-div {
-  font-size: 24px;
-}
 .red {
   background-color: red;
 }
