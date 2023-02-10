@@ -92,6 +92,57 @@
     <!-- <h2>{{ tailwindConfig }}</h2> -->
     <TButton>Button</TButton>
   </div>
+  <div class="w-20 h-20 bg-slate-50">
+    <h2 class="p-5">asd</h2>
+  </div>
+  <div class="flex space-x-20">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div class="space-y-10">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Intro to CSS</td>
+        <td>Adam</td>
+        <td>858</td>
+      </tr>
+      <tr class="bg-emerald-200">
+        <td>
+          A Long and Winding Tour of the History of UI Frameworks and Tools and
+          the Impact on Design
+        </td>
+        <td>Adam</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Intro to JavaScript</td>
+        <td>Chris</td>
+        <td>1,280</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="w-1/3 mx-auto bg-purple-500 text-center p-10 rounded-lg">
+    <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4">
+      <div class="bg-white">1</div>
+      <div class="col-start-3 bg-white">2</div>
+      <div class="bg-white">3</div>
+      <div class="bg-white">4</div>
+      <div class="row-start-1 col-start-2 col-span-2 bg-white">5</div>
+    </div>
+  </div>
 </template>
 <script setup>
 import tailwindConfig from "#tailwind-config";
@@ -118,9 +169,7 @@ const getDa = () => {
 console.log(getDa());
 
 async function getData() {
-  const r = await fetch(
-    "https://api.github.com/orgs/nuxt"
-  );
+  const r = await fetch("https://api.github.com/orgs/nuxt");
   return r;
 }
 function reverse() {
@@ -134,13 +183,15 @@ onMounted(() => {
     .catch((err) => {});
 });
 const { data: as } = await useFetch("https://api.github.com/orgs/nuxt");
-const { pending, data: posts } = useLazyFetch('https://api.github.com/orgs/nuxt')
+const { pending, data: posts } = useLazyFetch(
+  "https://api.github.com/orgs/nuxt"
+);
 watch(posts, (newPosts) => {
   // console.log('newPosts', newPosts);
   // Because posts starts out null, you will not have access
   // to its contents immediately, but you can watch it.
-})
-const data = await $fetch('https://api.github.com/orgs/nuxt')
+});
+const data = await $fetch("https://api.github.com/orgs/nuxt");
 // console.log('!!!data', data);
 </script>
 <style>
