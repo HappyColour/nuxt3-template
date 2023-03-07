@@ -143,9 +143,15 @@
       <div class="row-start-1 col-start-2 col-span-2 bg-white">5</div>
     </div>
   </div>
+  <TodoList :list="list" data-id="6" :isShow="isShow" />
+  <button @click="isShow = !isShow">button</button>
 </template>
 <script setup>
 import tailwindConfig from "#tailwind-config";
+const isShow = ref(true)
+const list = ref([
+  {title: 'abc'}, {title: 'def'}, {title: 'ghi'}
+])
 const showModal = ref(false);
 const groceryList = ref([
   { id: 0, text: "Vegetables" },
