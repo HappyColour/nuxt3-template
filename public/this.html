@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+
+class Person{
+  #name
+  #age
+  #gender
+  constructor(name, age, gender) {
+    this.#name = name
+    this.#age = age
+    this.#gender = gender
+  }
+  sayHello(){
+    console.log(this.#name)
+  }
+  get gender(){
+    return this.#gender
+  }
+  set gender(gender) {
+    this.#gender = gender
+  }
+}
+
+function fn(){
+  console.log('fn', this);
+}
+fn()
+// onMounted(()=>{
+//   console.log('onMounted', this);
+// })
+const fn2 = ()=>{
+  console.log('fn2', this);
+}
+fn2()
+const a = {
+  name: 'Danny',
+  sayHello(){
+    console.log('a-sayHello', this.name);
+  }
+}
+a.sayHello()
+a.name = 'Dannys'
+a.sayHello()
+</script>
+<body>
+  
+</body>
+</html>
