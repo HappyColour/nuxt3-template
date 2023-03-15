@@ -5,6 +5,7 @@
     <h2>a：{{ a }}</h2>
     <h2>{{ a.sayHello() }}</h2>
     <h2>{{ copyA.sayHello() }}</h2>
+    <h2>{{ copyA2 }}</h2>
   </div>
 </template>
 <script setup>
@@ -32,6 +33,7 @@ const a = {
     skin: 'yellow'
   }
 }
+const b = [{name: 'Danny'},{name: 'Zhang'}]
 const copyA = reactive(deepClone(a))
 copyA.name = 'deepClone-Danny'
 copyA.body.face = 'deepClone-awesome'
@@ -39,5 +41,8 @@ copyA.sayHello()
 console.log('copyA', copyA);
 console.log('A', a);
 console.log('A-say', a.sayHello());
+
+const copyA2 = structuredClone(b)
+console.log('copyA2', copyA2);
 
 </script>
