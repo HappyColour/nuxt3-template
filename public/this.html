@@ -48,6 +48,21 @@ const a = {
 a.sayHello()
 a.name = 'Dannys'
 a.sayHello()
+
+
+
+
+function outer() {
+  // console.log('1');
+  let num = 0
+  return (() => {
+    num++
+    console.log(num);
+  })
+}
+
+const cc = outer()
+cc()
 </script>
 <body>
   

@@ -34,6 +34,7 @@ function someFn(){
 
 function outer(cb){
   // return () => {
+    console.log('记录日志！！！');
     const r = cb()
     return r
   // }
