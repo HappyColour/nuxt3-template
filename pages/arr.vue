@@ -22,15 +22,31 @@ const arr3 = ()=>{
   }
   const w = Object.keys(obj)
   const key = w.map(Number)
-  console.log(key);
+  // console.log(key);
   // or
   const key2 = []
   for (const s of w) {
     let k2 = Number(s)
     key2.push(k2)
   }
-  console.log(key2);
+  // console.log(key2);
   return key
 }
 arr3()
+// 冒泡
+/**
+ * 1,3,2,8,0,5,7,6,4,9
+ * 1,2,3,
+ */
+const arr4 = [9,1,3,2,8,0,5,7,6,4]
+for(let i = 0;i< arr4.length - 1;i++) {
+  for(let j = 0;j < arr4.length - 1 - i;j++) {
+    if(arr4[j] > arr4[j+1]) {
+      let temp = arr4[j]
+      arr4[j] = arr4[j+1]
+      arr4[j+1] = temp
+    }
+  }
+}
+console.log('arr4', arr4);
 </script>
