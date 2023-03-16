@@ -20,12 +20,31 @@ function filterContent(target, cb){
     if(cb(target[i])) {
       newArr.push(target[i]) // newArr.value.push(target[i])
     }
-  }
+  } 
   console.log(newArr);
   // return newArr
 }
-filterContent(personArr, a => a.name === '孙悟空' || a.name === '八戒')
+// filterContent(personArr, a => a.name === '孙悟空' || a.name === '八戒')
+filterContent(personArr, a => a.age % 3 === 0 )
+
+
+function someFn(){
+  return 'Hello'
+}
+
+function outer(cb){
+  // return () => {
+    const r = cb()
+    return r
+  // }
+}
+let result = outer(someFn)
+console.log('result', result);
+
+function test(){
+  console.log('test!~~~~~~');
+  return 'test'
+}
+let testR = outer(test)
+console.log('testR', testR);
 </script>
-<style>
-  
-</style>
