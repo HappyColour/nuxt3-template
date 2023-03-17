@@ -17,7 +17,7 @@ function loopRun(num){
   return result
 }
 let r = ref(loopRun(10))
-console.log(r);
+console.log(r.value);
 
 
 function loopRunDG(num){
@@ -38,7 +38,7 @@ function loopRunDG(num){
    */ 
 }
 let u = ref(loopRunDG(10))
-console.log(u);
+console.log(u.value);
 
 /**
  * 一对兔子生后的两个月后每个月都能生一对小兔子
